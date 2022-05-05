@@ -102,12 +102,11 @@ body {
 }
 
 div#box1 {
-  background: red;
   position: absolute;
-  width: 400px;
+  width: 500px;
   height: 400px;
-
-  transform: rotateX(60deg) rotateZ(45deg) translateZ(-9vw);
+  transform: rotateX(60deg) rotateZ(45deg) translateZ(-70px);
+  //perspective(5000px)
 }
 
 
@@ -169,48 +168,187 @@ div#box1 {
 .long-board:nth-of-type(1) {
   top: 20px;
   left: 20px;
+  transition-delay: .3s;
 }
 
 .short-board:nth-of-type(2) {
   top: 60px;
   left: 20px;
+  transition-delay: .4s;
 }
 
 .long-board:nth-of-type(3) {
   top: 100px;
   left: 20px;
+  transition-delay: .5s;
 }
 
 .short-board:nth-of-type(4) {
   top: 140px;
   left: 20px;
+  transition-delay: .6s;
 }
 
 .long-board:nth-of-type(5) {
   top: 180px;
   left: 20px;
+  transition-delay: .7s;
 }
 
 .short-board:nth-of-type(6) {
   top: 220px;
   left: 20px;
+  transition-delay: .8s;
 }
 
 .long-board:nth-of-type(7) {
   top: 260px;
   left: 20px;
+  transition-delay: .9s;
 }
 
 .short-board:nth-of-type(8) {
   top: 300px;
   left: 20px;
+  transition-delay: 1s;
 }
 
+.long-board:nth-of-type(9) {
+  top: 340px;
+  left: 20px;
+  transition-delay: 1.1s;
+}
+
+.short-board:nth-of-type(10) {
+  top: 380px;
+  left: 20px;
+  transition-delay: 1.2s;
+}
+
+.long-board:nth-of-type(11) {
+  top: 20px;
+  left: 161px;
+  transition-delay: 1.3s;
+}
+
+.long-board:nth-of-type(12) {
+  top: 60px;
+  left: 91px;
+  transition-delay: 1.4s;
+}
+
+.long-board:nth-of-type(13) {
+  top: 100px;
+  left: 161px;
+  transition-delay: 1.5s;
+}
+
+.long-board:nth-of-type(14) {
+  top: 140px;
+  left: 91px;
+  transition-delay: 1.6s;
+}
+
+.long-board:nth-of-type(15) {
+  top: 180px;
+  left: 161px;
+  transition-delay: 1.7s;
+}
+
+.long-board:nth-of-type(16) {
+  top: 220px;
+  left: 91px;
+  transition-delay: 1.8s;
+}
+
+.long-board:nth-of-type(17) {
+  top: 260px;
+  left: 161px;
+  transition-delay: 1.9s;
+}
+
+.long-board:nth-of-type(18) {
+  top: 300px;
+  left: 91px;
+  transition-delay: 2s;
+}
+
+.long-board:nth-of-type(19) {
+  top: 340px;
+  left: 161px;
+  transition-delay: 2.1s;
+}
+
+.long-board:nth-of-type(20) {
+  top: 380px;
+  left: 91px;
+  transition-delay: 2.2s;
+}
+
+.long-board:nth-of-type(21) {
+  top: 20px;
+  left: 302px;
+  transition-delay: 2.3s;
+}
+
+.long-board:nth-of-type(22) {
+  top: 60px;
+  left: 232px;
+  transition-delay: 2.4s;
+}
+
+.long-board:nth-of-type(23) {
+  top: 100px;
+  left: 302px;
+  transition-delay: 2.5s;
+}
+
+.long-board:nth-of-type(24) {
+  top: 140px;
+  left: 232px;
+  transition-delay: 2.6s;
+}
+
+.long-board:nth-of-type(25) {
+  top: 180px;
+  left: 302px;
+  transition-delay: 2.7s;
+}
+
+.long-board:nth-of-type(26) {
+  top: 220px;
+  left: 232px;
+  transition-delay: 2.8s;
+}
+
+.long-board:nth-of-type(27) {
+  top: 260px;
+  left: 302px;
+  transition-delay: 2.9s;
+}
+
+.long-board:nth-of-type(28) {
+  top: 300px;
+  left: 232px;
+  transition-delay: 3s;
+}
+
+.long-board:nth-of-type(29) {
+  top: 340px;
+  left: 302px;
+  transition-delay: 3.1s;
+}
+
+.long-board:nth-of-type(30) {
+  top: 380px;
+  left: 232px;
+  transition-delay: 3.2s;
+}
 
 .floor {
   $width-el: 500px;
   $height-el: 10px;
-  $depth-el: 200px;
+  $depth-el: 209px;
 
   @include cube($width-el, $height-el, $depth-el);
 
@@ -234,15 +372,12 @@ div#box1 {
   &__top {
     background-color: #e9b58e;
   }
-
-
 }
-
 
 .left-wall {
   $width-el: 10px;
   $height-el: 300px;
-  $depth-el: 200px;
+  $depth-el: 209px;
 
   @include cube($width-el, $height-el, $depth-el);
 
@@ -271,7 +406,7 @@ div#box1 {
   &__baseboard {
     $width-el: 10px;
     $height-el: 5px;
-    $depth-el: 200px;
+    $depth-el: 209px;
 
     @include cube($width-el, $height-el, $depth-el);
 
@@ -350,6 +485,101 @@ div#box1 {
 
 }
 
+.tvBox {
+  $width-el: 10px;
+  $height-el: 300px;
+  $depth-el: 250px;
+
+  @include cube($width-el, $height-el, $depth-el);
+
+  position: absolute;
+  left: 245px;
+  top: -245px;
+  width: 10px;
+  height: 500px;
+  transform: rotateZ(90deg) translateZ(10px);
+
+  &__front,
+  &__back {
+    background-color: #d2bdc4;
+  }
+
+  &__right {
+    background-color: #9cbaf8;
+  }
+
+  &__left {
+    background-color: #80a7e8;
+  }
+
+  &__top {
+    background-color: #f5e8e8;
+  }
+
+  &__baseboard {
+    $width-el: 10px;
+    $height-el: 5px;
+    $depth-el: 250px;
+
+    @include cube($width-el, $height-el, $depth-el);
+
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    width: 10px;
+    height: 500px;
+
+    &__back,
+    &__right {
+      background-color: #eaeaea;
+    }
+
+    &__top {
+      background-color: white;
+    }
+  }
+}
 
 
-//#f9cc95
+/** /******************************** */
+
+
+.left-wall {
+  transition: transform .4s ease-out;
+  transform: translateZ(10px) translateY(2000px);
+  transition-delay: .3s;
+}
+
+.right-wall {
+  transition: transform .4s ease-out;
+  transform: rotateZ(90deg) translateZ(10px) translateY(-2000px);
+}
+
+.floor {
+  transition: transform .4s ease-out;
+  transform: translateZ(-2000px);
+  transition-delay: .3s;
+}
+
+.board {
+  transition: transform .4s ease-out;
+  transform: translateZ(2000px);
+}
+
+#box1.active {
+  .board {
+    transform: translateZ(10px);
+  }
+
+  .left-wall {
+    transform: translateZ(10px) translateY(0);
+  }
+
+  .right-wall {
+    transform: rotateZ(90deg) translateZ(10px) translateY(0);
+  }
+
+  .floor {
+    transform: translateZ(0);
+  }
+}
