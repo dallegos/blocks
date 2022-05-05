@@ -1,0 +1,355 @@
+:root {
+  --left-wall-color: #80a7e8;
+  --right-wall-color: #9cbaf8;
+
+  --floor-base-color: #e9b58e;
+}
+
+/**/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  transform-style: preserve-3d;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/***********************/
+/***********************/
+@mixin cube($width, $height, $depth) {
+  &__front {
+    @include cube-front($width, $height, $depth);
+  }
+
+  &__back {
+    @include cube-back($width, $height, $depth);
+  }
+
+  &__right {
+    @include cube-right($width, $height, $depth);
+  }
+
+  &__left {
+    @include cube-left($width, $height, $depth);
+  }
+
+  &__top {
+    @include cube-top($width, $height, $depth);
+  }
+
+  &__bottom {
+    @include cube-bottom($width, $height, $depth);
+  }
+}
+
+/************************/
+/* Mixin para crear cubo ( Caras siempre al frente ) */
+/************************/
+@mixin cube-front($width, $height, $depth) {
+  width: $width;
+  height: $height;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-($height - ($depth * 2)));
+}
+
+@mixin cube-back($width, $height, $depth) {
+  width: $width;
+  height: $height;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-$width) translateY(-$height);
+}
+
+@mixin cube-right($width, $height, $depth) {
+  width: $depth * 2;
+  height: $height;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ($width) translateX(-$depth * 2) translateY(-$height);
+}
+
+@mixin cube-left($width, $height, $depth) {
+  width: $depth * 2;
+  height: $height;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-$height);
+}
+
+@mixin cube-top($width, $height, $depth) {
+  width: $width;
+  height: $depth * 2;
+  transform-origin: top left;
+  transform: translateZ($height);
+}
+
+@mixin cube-bottom($width, $height, $depth) {
+  width: $width;
+  height: $depth * 2;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-$width);
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#box1 {
+  background: red;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+
+  transform: rotateX(60deg) rotateZ(45deg) translateZ(-9vw);
+}
+
+
+.absolute {
+  position: absolute;
+}
+
+.long-board {
+  $width-el: 139px;
+  $height-el: 5px;
+  $depth-el: 19px;
+
+  @include cube($width-el, $height-el, $depth-el);
+
+  width: 139px;
+  height: 38px;
+  transform: translateZ(10px);
+
+  &__front {
+    background-color: #daaa78;
+  }
+
+  &__right {
+    background-color: #daaa78;
+  }
+
+  &__top {
+    background-color: #f9cc95;
+    border: 1px solid #f9cc95;
+  }
+}
+
+.short-board {
+  $width-el: 69px;
+  $height-el: 5px;
+  $depth-el: 19px;
+
+  @include cube($width-el, $height-el, $depth-el);
+
+  width: 69px;
+  height: 38px;
+  transform: translateZ(10px);
+
+  &__front {
+    background-color: #daaa78;
+  }
+
+  &__right {
+    background-color: #daaa78;
+  }
+
+  &__top {
+    background-color: #f9cc95;
+    border: 1px solid #f9cc95;
+  }
+}
+
+
+.long-board:nth-of-type(1) {
+  top: 20px;
+  left: 20px;
+}
+
+.short-board:nth-of-type(2) {
+  top: 60px;
+  left: 20px;
+}
+
+.long-board:nth-of-type(3) {
+  top: 100px;
+  left: 20px;
+}
+
+.short-board:nth-of-type(4) {
+  top: 140px;
+  left: 20px;
+}
+
+.long-board:nth-of-type(5) {
+  top: 180px;
+  left: 20px;
+}
+
+.short-board:nth-of-type(6) {
+  top: 220px;
+  left: 20px;
+}
+
+.long-board:nth-of-type(7) {
+  top: 260px;
+  left: 20px;
+}
+
+.short-board:nth-of-type(8) {
+  top: 300px;
+  left: 20px;
+}
+
+
+.floor {
+  $width-el: 500px;
+  $height-el: 10px;
+  $depth-el: 200px;
+
+  @include cube($width-el, $height-el, $depth-el);
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 500px;
+  height: 400px;
+
+  &__front {
+    background-color: #bf8e6b;
+  }
+
+  &__back,
+  &__right,
+  &__left {
+    background-color: #d0a182;
+  }
+
+  &__bottom,
+  &__top {
+    background-color: #e9b58e;
+  }
+
+
+}
+
+
+.left-wall {
+  $width-el: 10px;
+  $height-el: 300px;
+  $depth-el: 200px;
+
+  @include cube($width-el, $height-el, $depth-el);
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 400px;
+  transform: translateZ(10px);
+
+  &__front {
+    background-color: #d2bdc4;
+  }
+
+  &__right,
+  &__left {
+    background-color: #80a7e8;
+  }
+
+  &__back,
+  &__top {
+    background-color: #f5e8e8;
+  }
+
+
+  &__baseboard {
+    $width-el: 10px;
+    $height-el: 5px;
+    $depth-el: 200px;
+
+    @include cube($width-el, $height-el, $depth-el);
+
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    width: 10px;
+    height: 400px;
+
+    &__front,
+    &__right {
+      background-color: #eaeaea;
+    }
+
+    &__back,
+    &__top {
+      background-color: white;
+    }
+  }
+
+}
+
+.right-wall {
+  $width-el: 10px;
+  $height-el: 300px;
+  $depth-el: 250px;
+
+  @include cube($width-el, $height-el, $depth-el);
+
+  position: absolute;
+  left: 245px;
+  top: -245px;
+  width: 10px;
+  height: 500px;
+  transform: rotateZ(90deg) translateZ(10px);
+
+  &__front,
+  &__back {
+    background-color: #d2bdc4;
+  }
+
+  &__right {
+    background-color: #9cbaf8;
+  }
+
+  &__left {
+    background-color: #80a7e8;
+  }
+
+  &__top {
+    background-color: #f5e8e8;
+  }
+
+  &__baseboard {
+    $width-el: 10px;
+    $height-el: 5px;
+    $depth-el: 250px;
+
+    @include cube($width-el, $height-el, $depth-el);
+
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    width: 10px;
+    height: 500px;
+
+    &__back,
+    &__right {
+      background-color: #eaeaea;
+    }
+
+    &__top {
+      background-color: white;
+    }
+  }
+
+}
+
+
+
+//#f9cc95

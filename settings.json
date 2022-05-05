@@ -1,0 +1,58 @@
+{
+    "cSpell.words": [
+        "endforeach"
+    ],
+    "todohighlight.exclude": [
+        "**/node_modules/**",
+        "**/vendor/**",
+        "**/webroot/plugins/**",
+        "**/bower_components/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/.vscode/**",
+        "**/.github/**",
+        "**/_output/**",
+        "**/*.min.*",
+        "**/*.map",
+        "**/.next/**"
+    ],
+    "es6-css-minify.minifyOnSave": "yes",
+    "es6-css-minify.genJSmap": true,
+    "html.format.indentInnerHtml": true,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/logs/**": true,
+        "**/tmp/**": true,
+        "**/webroot/**": true,
+        "**/tests/**": true,
+        "**/mongodata/**": true,
+        "**/mongodabu/**": true
+    },
+    "editor.rulers": [
+        120
+    ],
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file"
+    },
+    "[php]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false,
+        "editor.formatOnSaveMode": "file"
+    }
+}
