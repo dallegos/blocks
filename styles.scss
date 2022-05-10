@@ -114,6 +114,10 @@ div#box1 {
   position: absolute;
 }
 
+.shadow {
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
 .long-board {
   $width-el: 139px;
   $height-el: 5px;
@@ -164,185 +168,161 @@ div#box1 {
   }
 }
 
+@for $i from 1 through 30 {
+  .board:nth-of-type(#{$i}) {
+    transition-delay: $i * .15s;
+  }
+}
+
 
 .long-board:nth-of-type(1) {
   top: 20px;
   left: 20px;
-  transition-delay: .3s;
 }
 
 .short-board:nth-of-type(2) {
   top: 60px;
   left: 20px;
-  transition-delay: .4s;
 }
 
 .long-board:nth-of-type(3) {
   top: 100px;
   left: 20px;
-  transition-delay: .5s;
 }
 
 .short-board:nth-of-type(4) {
   top: 140px;
   left: 20px;
-  transition-delay: .6s;
 }
 
 .long-board:nth-of-type(5) {
   top: 180px;
   left: 20px;
-  transition-delay: .7s;
 }
 
 .short-board:nth-of-type(6) {
   top: 220px;
   left: 20px;
-  transition-delay: .8s;
 }
 
 .long-board:nth-of-type(7) {
   top: 260px;
   left: 20px;
-  transition-delay: .9s;
 }
 
 .short-board:nth-of-type(8) {
   top: 300px;
   left: 20px;
-  transition-delay: 1s;
 }
 
 .long-board:nth-of-type(9) {
   top: 340px;
   left: 20px;
-  transition-delay: 1.1s;
 }
 
 .short-board:nth-of-type(10) {
   top: 380px;
   left: 20px;
-  transition-delay: 1.2s;
 }
 
 .long-board:nth-of-type(11) {
   top: 20px;
   left: 161px;
-  transition-delay: 1.3s;
 }
 
 .long-board:nth-of-type(12) {
   top: 60px;
   left: 91px;
-  transition-delay: 1.4s;
 }
 
 .long-board:nth-of-type(13) {
   top: 100px;
   left: 161px;
-  transition-delay: 1.5s;
 }
 
 .long-board:nth-of-type(14) {
   top: 140px;
   left: 91px;
-  transition-delay: 1.6s;
 }
 
 .long-board:nth-of-type(15) {
   top: 180px;
   left: 161px;
-  transition-delay: 1.7s;
 }
 
 .long-board:nth-of-type(16) {
   top: 220px;
   left: 91px;
-  transition-delay: 1.8s;
 }
 
 .long-board:nth-of-type(17) {
   top: 260px;
   left: 161px;
-  transition-delay: 1.9s;
 }
 
 .long-board:nth-of-type(18) {
   top: 300px;
   left: 91px;
-  transition-delay: 2s;
 }
 
 .long-board:nth-of-type(19) {
   top: 340px;
   left: 161px;
-  transition-delay: 2.1s;
 }
 
 .long-board:nth-of-type(20) {
   top: 380px;
   left: 91px;
-  transition-delay: 2.2s;
 }
 
 .long-board:nth-of-type(21) {
   top: 20px;
   left: 302px;
-  transition-delay: 2.3s;
 }
 
 .long-board:nth-of-type(22) {
   top: 60px;
   left: 232px;
-  transition-delay: 2.4s;
 }
 
 .long-board:nth-of-type(23) {
   top: 100px;
   left: 302px;
-  transition-delay: 2.5s;
 }
 
 .long-board:nth-of-type(24) {
   top: 140px;
   left: 232px;
-  transition-delay: 2.6s;
 }
 
 .long-board:nth-of-type(25) {
   top: 180px;
   left: 302px;
-  transition-delay: 2.7s;
 }
 
 .long-board:nth-of-type(26) {
   top: 220px;
   left: 232px;
-  transition-delay: 2.8s;
 }
 
 .long-board:nth-of-type(27) {
   top: 260px;
   left: 302px;
-  transition-delay: 2.9s;
 }
 
 .long-board:nth-of-type(28) {
   top: 300px;
   left: 232px;
-  transition-delay: 3s;
 }
 
 .long-board:nth-of-type(29) {
   top: 340px;
   left: 302px;
-  transition-delay: 3.1s;
 }
 
 .long-board:nth-of-type(30) {
   top: 380px;
   left: 232px;
-  transition-delay: 3.2s;
 }
 
 .floor {
@@ -483,61 +463,290 @@ div#box1 {
     }
   }
 
-}
-
-.tvBox {
-  $width-el: 10px;
-  $height-el: 300px;
-  $depth-el: 250px;
-
-  @include cube($width-el, $height-el, $depth-el);
-
-  position: absolute;
-  left: 245px;
-  top: -245px;
-  width: 10px;
-  height: 500px;
-  transform: rotateZ(90deg) translateZ(10px);
-
-  &__front,
-  &__back {
-    background-color: #d2bdc4;
-  }
-
-  &__right {
-    background-color: #9cbaf8;
-  }
-
-  &__left {
-    background-color: #80a7e8;
-  }
-
-  &__top {
-    background-color: #f5e8e8;
-  }
-
-  &__baseboard {
-    $width-el: 10px;
-    $height-el: 5px;
-    $depth-el: 250px;
+  .socket {
+    $width-el: 3px;
+    $height-el: 15px;
+    $depth-el: 15px;
 
     @include cube($width-el, $height-el, $depth-el);
 
-    position: absolute;
     left: 10px;
-    top: 0px;
-    width: 10px;
-    height: 500px;
+    width: 15px;
+    height: 40px;
+    -webkit-transform: translateZ(40px);
+    transform: translateZ(40px);
 
-    &__back,
-    &__right {
-      background-color: #eaeaea;
+    &__front,
+    &__back {
+      background-color: #d6c8ce;
+    }
+
+    &__right,
+    &__left {
+      background-color: #e4d9de;
     }
 
     &__top {
-      background-color: white;
+      background-color: #f2e6ec;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 7px;
+      background-color: #999;
+    }
+
+    &:before {
+      transform: rotateZ(90deg) rotateX(90deg) translateY(8px);
+      left: 2px;
+      top: 14px;
+    }
+
+    &:after {
+      transform: rotateZ(90deg) rotateX(90deg) translateY(8px);
+      left: 2px;
+      top: 8px;
+    }
+
+    &.socket1 {
+      top: 150px;
+    }
+
+    &.socket2 {
+      top: 100px
     }
   }
+
+  .heater {
+
+    left: 10px;
+    transform: translateZ(20px) translateY(415px);
+
+    .resistance {
+      $width-el: 12px;
+      $height-el: 70px;
+      $depth-el: 4px;
+
+      @include cube($width-el, $height-el, $depth-el);
+      top: 0px;
+
+      &__front,
+      &__back {
+        background-color: #cfbec8;
+      }
+
+      &__right,
+      &__left {
+        background-color: #e7d6de;
+      }
+
+      &__top {
+        background-color: #f4e5ec;
+      }
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          //background-color: lighten($base-color, $i * 5%);
+          top: $i * -12px;
+        }
+      }
+    }
+  }
+
+}
+
+.tvBox {
+  $width-el: 22px;
+  $height-el: 110px;
+  $depth-el: 80px;
+
+  @include cube($width-el, $height-el, $depth-el);
+
+  top: 200px;
+  left: 25px;
+  transform: translateZ(15px);
+
+  &__front,
+  &__back {
+    background-color: #c69052;
+  }
+
+
+  &__left,
+  &__right {
+    background-color: #d9a16e;
+  }
+
+  &__top {
+    background-color: #f4bf8d;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: -54px;
+      left: 10px;
+      width: 3px;
+      background: #d9a16e;
+      height: 159px;
+      transform: translateY(54px);
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 8px;
+    width: 30px;
+    background: #726760;
+    height: 160px;
+    transform: rotateY(90deg) translateX(-55px);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 145px;
+    left: 0px;
+    width: 23px;
+    background: #625952;
+    height: 30px;
+    transform: rotateX(90deg) translateY(55px);
+
+
+
+  }
+}
+
+.microwaveBox {
+  $width-el: 30px;
+  $height-el: 60px;
+  $depth-el: 45px;
+
+  @include cube($width-el, $height-el, $depth-el);
+
+  top: 250px;
+  left: 60px;
+  transform: translateZ(15px);
+
+  &__front,
+  &__back {
+    background-color: #ccb6c2;
+  }
+
+
+  &__left,
+  &__right {
+    background-color: #e5d6db;
+  }
+
+  &__top {
+    background-color: #fffafd;
+  }
+}
+
+.openedBox {
+  $width-el: 50px;
+  $height-el: 60px;
+  $depth-el: 75px;
+
+  @include cube($width-el, $height-el, $depth-el);
+
+  top: 190px;
+  left: 160px;
+  transform: translateZ(15px);
+
+  &__front,
+  &__back {
+    background-color: #d8c7cf;
+  }
+
+  &__left,
+  &__right {
+    background-color: #e5d6db;
+  }
+
+  &__top {
+    background-color: #fffafd;
+  }
+
+  &__bottom {
+    background-color: #d2bec5;
+  }
+
+  .folds {
+
+    &__left {
+      background-color: #fff;
+      width: 150px;
+      height: 25px;
+      top: 0;
+      left: 0;
+      transform: rotate(90deg) translateZ(60px) rotateX(180deg);
+      transform-origin: top left;
+      transition: transform .4s ease, background-color .4s ease;
+
+    }
+
+    &__right {
+      background-color: #fff;
+      width: 150px;
+      height: 25px;
+      top: 0px;
+      left: 50px;
+      transform: rotate(90deg) translateZ(60px) rotateX(0deg);
+      transform-origin: top left;
+      transition: transform .4s ease, background-color .4s ease;
+    }
+
+    &__front {
+      background-color: #fff;
+      width: 50px;
+      height: 36px;
+      top: 150px;
+      left: 0;
+      transform: translateZ(60px) rotateX(180deg);
+      transform-origin: top left;
+      transition: transform .4s ease, background-color .4s ease;
+      transition-delay: .4s;
+    }
+
+    &__back {
+      background-color: #fff;
+      width: 50px;
+      height: 20px;
+      top: 0px;
+      left: 0;
+      transform: translateZ(60px) rotateX(0deg);
+      transform-origin: top left;
+      transition: transform .4s ease, background-color .4s ease;
+      transition-delay: .4s;
+    }
+
+    &.unfolded {
+      .folds__left {
+        transform: rotate(90deg) translateZ(60px) rotateX(35deg);
+        background-color: #f7f2f6;
+      }
+
+      .folds__right {
+        transform: rotate(90deg) translateZ(60px) rotateX(130deg);
+      }
+
+      .folds__front {
+        transform: translateZ(60px) rotateX(20deg);
+      }
+
+      .folds__back {
+        transform: translateZ(60px) rotateX(120deg);
+        background-color: #f7f2f6;
+      }
+    }
+  }
+
 }
 
 
@@ -562,7 +771,7 @@ div#box1 {
 }
 
 .board {
-  transition: transform .4s ease-out;
+  transition: transform .2s ease-out;
   transform: translateZ(2000px);
 }
 
