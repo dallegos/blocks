@@ -1,0 +1,180 @@
+#box2 {
+
+  --left-wall-color: #b8cde2;
+  --right-wall-color: #c7d7e6;
+  --floor-base-color: #e7eff8;
+  --top-border-color: #e2ebf4;
+  --front-border-color: #87adce;
+  --back-border-color: #b8cce2;
+
+  .floor {
+    $width-el: 500px;
+    $height-el: 10px;
+    $depth-el: 209px;
+
+    @include cube($width-el, $height-el, $depth-el);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: 400px;
+
+    &__front {
+      background-color: var(--front-border-color);
+    }
+
+    &__back,
+    &__right,
+    &__left {
+      background-color: var(--back-border-color);
+    }
+
+    &__bottom,
+    &__top {
+      background-color: var(--floor-base-color);
+    }
+  }
+
+  .left-wall {
+    $width-el: 10px;
+    $height-el: 300px;
+    $depth-el: 209px;
+
+    @include cube($width-el, $height-el, $depth-el);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 400px;
+    transform: translateZ(10px);
+
+    &__front {
+      background-color: var(--front-border-color);
+    }
+
+    &__right,
+    &__left {
+      background-color: var(--left-wall-color);
+    }
+
+    &__back,
+    &__top {
+      background-color: var(--top-border-color);
+    }
+
+
+    &__baseboard {
+      $width-el: 10px;
+      $height-el: 5px;
+      $depth-el: 209px;
+
+      @include cube($width-el, $height-el, $depth-el);
+
+      position: absolute;
+      left: 10px;
+      top: 0px;
+      width: 10px;
+      height: 400px;
+
+      &__front,
+      &__right {
+        background-color: #eaeaea;
+      }
+
+      &__back,
+      &__top {
+        background-color: white;
+      }
+    }
+
+  }
+
+  .right-wall {
+    $width-el: 10px;
+    $height-el: 300px;
+    $depth-el: 250px;
+
+    @include cube($width-el, $height-el, $depth-el);
+
+    position: absolute;
+    left: 245px;
+    top: -245px;
+    width: 10px;
+    height: 500px;
+    transform: rotateZ(90deg) translateZ(10px);
+
+    &__front,
+    &__back {
+      background-color: var(--back-border-color);
+    }
+
+    &__left,
+    &__right {
+      background-color: var(--right-wall-color);
+    }
+
+    &__top {
+      background-color: var(--top-border-color);
+    }
+
+    &__baseboard {
+      $width-el: 10px;
+      $height-el: 5px;
+      $depth-el: 250px;
+
+      @include cube($width-el, $height-el, $depth-el);
+
+      position: absolute;
+      left: 10px;
+      top: 0px;
+      width: 10px;
+      height: 500px;
+
+      &__back,
+      &__right {
+        background-color: #eaeaea;
+      }
+
+      &__top {
+        background-color: white;
+      }
+    }
+
+  }
+
+  .left-wall {
+    transition: transform .4s ease-out;
+    transform: translateZ(10px) translateY(2000px);
+    transition-delay: .3s;
+  }
+
+  .right-wall {
+    transition: transform .4s ease-out;
+    transform: rotateZ(90deg) translateZ(10px) translateY(-2000px);
+  }
+
+  .floor {
+    transition: transform .4s ease-out;
+    transform: translateZ(-2000px);
+    transition-delay: .3s;
+  }
+
+  &.active {
+
+    .left-wall {
+      transform: translateZ(10px) translateY(0);
+    }
+
+    .right-wall {
+      transform: rotateZ(90deg) translateZ(10px) translateY(0);
+    }
+
+    .floor {
+      transform: translateZ(0);
+    }
+
+  }
+
+}

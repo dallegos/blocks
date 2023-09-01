@@ -1,0 +1,30 @@
+/**/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    transform-style: preserve-3d;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.shadow {
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+}

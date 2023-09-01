@@ -5,10 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Isometric Blocks</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    <div id="box1" class="active">
+    <div id="controls">
+      <button id="prev">Prev</button>
+      <button id="next">Next</button>
+      <button id="toggle">Toggle</button>
+    </div>
+
+    <div id="box1" class="box">
       <div class="floor">
         <div class="floor__front absolute"></div>
         <div class="floor__back absolute"></div>
@@ -424,6 +430,53 @@
           <div class="folds__front absolute"></div>
           <div class="folds__left absolute"></div>
           <div class="folds__right absolute"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="box2" class="box">
+      <div class="floor">
+        <div class="floor__front absolute"></div>
+        <div class="floor__back absolute"></div>
+        <div class="floor__right absolute"></div>
+        <div class="floor__left absolute"></div>
+        <div class="floor__top absolute"></div>
+        <div class="floor__bottom absolute"></div>
+      </div>
+
+      <div class="left-wall">
+        <div class="left-wall__front absolute"></div>
+        <div class="left-wall__back absolute"></div>
+        <div class="left-wall__right absolute"></div>
+        <div class="left-wall__left absolute"></div>
+        <div class="left-wall__top absolute"></div>
+        <div class="left-wall__bottom absolute"></div>
+
+        <div class="left-wall__baseboard absolute">
+          <div class="left-wall__baseboard__front absolute"></div>
+          <div class="left-wall__baseboard__back absolute"></div>
+          <div class="left-wall__baseboard__right absolute"></div>
+          <div class="left-wall__baseboard__left absolute"></div>
+          <div class="left-wall__baseboard__top absolute"></div>
+          <div class="left-wall__baseboard__bottom absolute"></div>
+        </div>
+      </div>
+
+      <div class="right-wall">
+        <div class="right-wall__front absolute"></div>
+        <div class="right-wall__back absolute"></div>
+        <div class="right-wall__right absolute"></div>
+        <div class="right-wall__left absolute"></div>
+        <div class="right-wall__top absolute"></div>
+        <div class="right-wall__bottom absolute"></div>
+
+        <div class="right-wall__baseboard absolute">
+          <div class="right-wall__baseboard__front absolute"></div>
+          <div class="right-wall__baseboard__back absolute"></div>
+          <div class="right-wall__baseboard__right absolute"></div>
+          <div class="right-wall__baseboard__left absolute"></div>
+          <div class="right-wall__baseboard__top absolute"></div>
+          <div class="right-wall__baseboard__bottom absolute"></div>
         </div>
       </div>
     </div>

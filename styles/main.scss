@@ -1,0 +1,17 @@
+@import "global";
+@import "custom-properties";
+@import "mixins";
+@import "controls";
+
+
+.box {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  transform: rotateX(60deg) rotateZ(45deg) translateZ(-70px);
+  //perspective(5000px)
+
+}
+
+@import "box1";
+@import "box2";

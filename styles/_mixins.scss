@@ -1,0 +1,73 @@
+/***********************/
+/***********************/
+@mixin cube($width, $height, $depth) {
+  &__front {
+    @include cube-front($width, $height, $depth);
+  }
+
+  &__back {
+    @include cube-back($width, $height, $depth);
+  }
+
+  &__right {
+    @include cube-right($width, $height, $depth);
+  }
+
+  &__left {
+    @include cube-left($width, $height, $depth);
+  }
+
+  &__top {
+    @include cube-top($width, $height, $depth);
+  }
+
+  &__bottom {
+    @include cube-bottom($width, $height, $depth);
+  }
+}
+
+/************************/
+/* Mixin para crear cubo ( Caras siempre al frente ) */
+/************************/
+@mixin cube-front($width, $height, $depth) {
+  width: $width;
+  height: $height;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(-($height - ($depth * 2)));
+}
+
+
+@mixin cube-back($width, $height, $depth) {
+  width: $width;
+  height: $height;
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(-$width) translateY(-$height);
+}
+
+@mixin cube-right($width, $height, $depth) {
+  width: $depth * 2;
+  height: $height;
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ($width) translateX(-$depth * 2) translateY(-$height);
+}
+
+@mixin cube-left($width, $height, $depth) {
+  width: $depth * 2;
+  height: $height;
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(-$height);
+}
+
+@mixin cube-top($width, $height, $depth) {
+  width: $width;
+  height: $depth * 2;
+  transform-origin: top left;
+  transform: translateZ($height);
+}
+
+@mixin cube-bottom($width, $height, $depth) {
+  width: $width;
+  height: $depth * 2;
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(-$width);
+}
